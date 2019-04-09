@@ -1,0 +1,30 @@
+﻿@model IEnumerable<universidadContoso.ViewModels.FechaInscripcionGrupo>
+
+@{
+    ViewBag.Title = "Estadística del cuerpo de estudiantes";
+}
+
+<h2>Estadística del cuerpo de estudiantes.</h2>
+
+<table>
+    <tr>
+        <th>
+            Fecha de Inscripción
+        </th>
+        <th>
+            Estudiantes
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.fechaInscripcion)
+            </td>
+            <td>
+                @item.estudiantesContador
+            </td>
+        </tr>
+    }
+</table>
