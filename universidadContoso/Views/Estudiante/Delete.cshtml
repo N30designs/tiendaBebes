@@ -1,0 +1,48 @@
+﻿@model universidadContoso.Models.Estudiante
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<h2>Eliminar</h2>
+
+<h3 style="color: red">¿Esta completamente seguro de querer eliminar esto?</h3>
+<div>
+    <h4>Estudiante</h4>
+    <p class="error">@ViewBag.ErrorMessage</p>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apellidos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apellidos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaInscripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaInscripcion)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Volver al listado", "Index")
+        </div>
+    }
+</div>

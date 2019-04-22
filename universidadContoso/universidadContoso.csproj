@@ -8,7 +8,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{73A1EC9E-F77C-4221-92C7-2D8CCE1E517F}</ProjectGuid>
+    <ProjectGuid>{59006FAB-3832-4F6C-B94F-1CDFEBEED3BD}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -45,12 +45,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
@@ -124,6 +118,51 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.0\lib\net451\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.0\lib\net451\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.4.0.0\lib\net451\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.0\lib\net451\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.0.0\lib\net451\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.4.0.0\lib\net451\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.4.0.0\lib\net451\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.0\lib\net451\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -131,12 +170,16 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\EstudiantesController.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\EstudianteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="DAL\EscuelaConfiguracion.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="DAL\EscuelaConfiguration.cs" />
     <Compile Include="DAL\EscuelaContext.cs" />
-    <Compile Include="DAL\EscuelaInicializa.cs" />
+    <Compile Include="DAL\EscuelaInitilizer.cs" />
     <Compile Include="DAL\EscuelaInterceptorLogging.cs" />
     <Compile Include="DAL\EscuelaInterceptorTransientErrors.cs" />
     <Compile Include="Global.asax.cs">
@@ -144,31 +187,24 @@
     </Compile>
     <Compile Include="Logging\ILogger.cs" />
     <Compile Include="Logging\Logger.cs" />
-    <Compile Include="Migrations\201904090759327_InitialCreate.cs" />
-    <Compile Include="Migrations\201904090759327_InitialCreate.Designer.cs">
-      <DependentUpon>201904090759327_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201904111048151_InitialCreate.cs" />
+    <Compile Include="Migrations\201904111048151_InitialCreate.Designer.cs">
+      <DependentUpon>201904111048151_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904090908337_Migracion.cs" />
-    <Compile Include="Migrations\201904090908337_Migracion.Designer.cs">
-      <DependentUpon>201904090908337_Migracion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904090931433_MaxLengthOnNames.cs" />
-    <Compile Include="Migrations\201904090931433_MaxLengthOnNames.Designer.cs">
-      <DependentUpon>201904090931433_MaxLengthOnNames.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904090952537_cambiosEstudiantes.cs" />
-    <Compile Include="Migrations\201904090952537_cambiosEstudiantes.Designer.cs">
-      <DependentUpon>201904090952537_cambiosEstudiantes.cs</DependentUpon>
+    <Compile Include="Migrations\201904111058358_seed.cs" />
+    <Compile Include="Migrations\201904111058358_seed.Designer.cs">
+      <DependentUpon>201904111058358_seed.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Curso.cs" />
-    <Compile Include="Models\Departamento.cs" />
-    <Compile Include="Models\DespachoAsignacion.cs" />
     <Compile Include="Models\Estudiante.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Inscripcion.cs" />
-    <Compile Include="Models\Profesores.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\FechaInscripcionGrupo.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\FechaInscripcionGroup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -207,11 +243,31 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Estudiantes\Create.cshtml" />
-    <Content Include="Views\Estudiantes\Delete.cshtml" />
-    <Content Include="Views\Estudiantes\Details.cshtml" />
-    <Content Include="Views\Estudiantes\Edit.cshtml" />
-    <Content Include="Views\Estudiantes\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Estudiante\Create.cshtml" />
+    <Content Include="Views\Estudiante\Delete.cshtml" />
+    <Content Include="Views\Estudiante\Details.cshtml" />
+    <Content Include="Views\Estudiante\Edit.cshtml" />
+    <Content Include="Views\Estudiante\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -230,17 +286,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201904090759327_InitialCreate.resx">
-      <DependentUpon>201904090759327_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904111048151_InitialCreate.resx">
+      <DependentUpon>201904111048151_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904090908337_Migracion.resx">
-      <DependentUpon>201904090908337_Migracion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904090931433_MaxLengthOnNames.resx">
-      <DependentUpon>201904090931433_MaxLengthOnNames.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904090952537_cambiosEstudiantes.resx">
-      <DependentUpon>201904090952537_cambiosEstudiantes.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904111058358_seed.resx">
+      <DependentUpon>201904111058358_seed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -259,7 +309,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>52078</DevelopmentServerPort>
+          <DevelopmentServerPort>51585</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:52078/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

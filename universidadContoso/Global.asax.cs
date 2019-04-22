@@ -18,9 +18,10 @@ namespace universidadContoso
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            //Añadido para log de sistema.
             DbInterception.Add(new EscuelaInterceptorTransientErrors());
             DbInterception.Add(new EscuelaInterceptorLogging());
         }
+
+
     }
 }

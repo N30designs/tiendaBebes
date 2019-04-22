@@ -1,0 +1,62 @@
+﻿@model PagedList.IPagedList<universidadContoso.Models.Estudiante>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Estudiantes";
+}
+
+<h2>Estudiantes</h2>
+
+<p>
+    <h3>@Html.ActionLink("Crear nuevo", "Create")</h3>
+</p>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Filtrar por nombre: @Html.TextBox("SearchString")
+        <input type="submit" value="Buscar" />
+    </p>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("Apellidos", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            Nombre
+        </th>
+        <th>
+            @Html.ActionLink("Fecha de Inscripción", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellidos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaInscripcion)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Detalles", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

@@ -1,0 +1,64 @@
+﻿@model universidadContoso.Models.Estudiante
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Estudiante</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apellidos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apellidos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaInscripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaInscripcion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Inscripciones)
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Nombre del Curso</th>
+                    <th>Nota</th>
+                </tr>
+                @foreach (var item in Model.Inscripciones)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Curso.Nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nota)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Volver al listado", "Index")
+</p>
