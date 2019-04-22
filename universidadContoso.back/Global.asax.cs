@@ -21,5 +21,7 @@ namespace universidadContoso
             DbInterception.Add(new EscuelaInterceptorTransientErrors());
             DbInterception.Add(new EscuelaInterceptorLogging());
         }
+
+
     }
 }

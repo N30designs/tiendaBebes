@@ -195,13 +195,28 @@
     <Compile Include="Migrations\201904111058358_seed.Designer.cs">
       <DependentUpon>201904111058358_seed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904220721400_MaxLengthOnNames.cs" />
+    <Compile Include="Migrations\201904220721400_MaxLengthOnNames.Designer.cs">
+      <DependentUpon>201904220721400_MaxLengthOnNames.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904220727325_MaxLengthOnNames1.cs" />
+    <Compile Include="Migrations\201904220727325_MaxLengthOnNames1.Designer.cs">
+      <DependentUpon>201904220727325_MaxLengthOnNames1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904220900169_ComplexDataModel.cs" />
+    <Compile Include="Migrations\201904220900169_ComplexDataModel.Designer.cs">
+      <DependentUpon>201904220900169_ComplexDataModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Curso.cs" />
+    <Compile Include="Models\Departamento.cs" />
+    <Compile Include="Models\DespachoAsignado.cs" />
     <Compile Include="Models\Estudiante.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Inscripcion.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Profesor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\FechaInscripcionGroup.cs" />
@@ -291,6 +306,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904111058358_seed.resx">
       <DependentUpon>201904111058358_seed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904220721400_MaxLengthOnNames.resx">
+      <DependentUpon>201904220721400_MaxLengthOnNames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904220727325_MaxLengthOnNames1.resx">
+      <DependentUpon>201904220727325_MaxLengthOnNames1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904220900169_ComplexDataModel.resx">
+      <DependentUpon>201904220900169_ComplexDataModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

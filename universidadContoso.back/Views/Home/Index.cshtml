@@ -6,11 +6,11 @@
     <h1>Universidad Contoso</h1>
 </div>
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4" style="text-align: left">
         <h2>Bienvenido a Universidad Contoso</h2>
-        <p>
-            Tercera versión de la aplicación, recreamos la página desde cero. 
-        </p>
+        <p>Tercera versión de la aplicación, recreamos la página desde cero. </p>
+        <p style="text-align: center">Actualmente estoy siguiente <a href="https://docs.microsoft.com/en-us/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application"> este</a>
+        manual.</p>
     </div>
     <div class="col-md-8">
         <table class="table">
@@ -46,9 +46,17 @@
                     </tr>
                     <tr>
                         <td><b>11/04/2019</b></td>
-                        <td><b>Connection Resiliency and Command Interception</b></td>
+                        <td><b>Code First Migrations and Deployment</b></td>
                         <td>Finalizado</td>
-                        <td>Nada que remarcar.</td>
+                        <td>Dado que en el ejemplo no se contempla el registro de usuarios, en mi caso hay dos contextos de datos en lugar
+                        de uno, sólo he migrado el que concierne al ejemplo, hay que tenerlo en cuenta en el momento del despliegue, pues 
+                        la base de datos SQL UniversidadContoso2 solo contiene las tablas mencionadas.</td>
+                    </tr>
+                    <tr>
+                        <td><b>22/04/2019</b></td>
+                        <td><b>Creating a More Complex Data Model</b></td>
+                        <td>Pendiente</td>
+                        <td>El próximo día debería comenzar por aquí si no hay ningún cambio...</td>
                     </tr>
                 </tbody>
         </table>
