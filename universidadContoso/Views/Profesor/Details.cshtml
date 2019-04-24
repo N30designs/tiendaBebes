@@ -1,0 +1,50 @@
+﻿@model universidadContoso.Models.Profesor
+
+@{
+    ViewBag.Title = "Detalles del profesor";
+}
+
+<h2>Detalles del profesor</h2>
+
+<div>
+    <h4>Profesor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DespachoAsignado.Ubicacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DespachoAsignado.Ubicacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apellidos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apellidos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaContratacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaContratacion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Volver al listado", "Index")
+</p>

@@ -174,9 +174,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CursoController.cs" />
     <Compile Include="Controllers\EstudianteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProfesorController.cs" />
     <Compile Include="DAL\EscuelaConfiguration.cs" />
     <Compile Include="DAL\EscuelaContext.cs" />
     <Compile Include="DAL\EscuelaInitilizer.cs" />
@@ -219,7 +221,9 @@
     <Compile Include="Models\Profesor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\CursoAsignadoData.cs" />
     <Compile Include="ViewModels\FechaInscripcionGroup.cs" />
+    <Compile Include="ViewModels\ProfesorIndexData.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -283,6 +287,16 @@
     <Content Include="Views\Estudiante\Details.cshtml" />
     <Content Include="Views\Estudiante\Edit.cshtml" />
     <Content Include="Views\Estudiante\Index.cshtml" />
+    <Content Include="Views\Curso\Create.cshtml" />
+    <Content Include="Views\Curso\Delete.cshtml" />
+    <Content Include="Views\Curso\Details.cshtml" />
+    <Content Include="Views\Curso\Edit.cshtml" />
+    <Content Include="Views\Curso\Index.cshtml" />
+    <Content Include="Views\Profesor\Create.cshtml" />
+    <Content Include="Views\Profesor\Delete.cshtml" />
+    <Content Include="Views\Profesor\Details.cshtml" />
+    <Content Include="Views\Profesor\Edit.cshtml" />
+    <Content Include="Views\Profesor\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
