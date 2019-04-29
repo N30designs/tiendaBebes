@@ -21,13 +21,19 @@ namespace universidadContoso.Controllers
 
         public ActionResult About()
         {
-            IQueryable<FechaInscripcionGroup> data = from Estudiante in db.Estudiantes
+            /*IQueryable<FechaInscripcionGroup> data = from Estudiante in db.Estudiantes
                                                      group Estudiante by Estudiante.FechaInscripcion into dateGroup
                                                    select new FechaInscripcionGroup
                                                    {
                                                        FechaInscripcion = dateGroup.Key,
                                                        EstudiantesContador= dateGroup.Count()
-                                                   };
+                                                   };*/
+
+            string query = "SELECT FechaInscripcion, COUNT(*) AS CantidadEstudiantes FROM PERSONA  WHERE Discriminator = 'Estudiante' GROUP BY FECHAINSCRIPCION ";
+                
+                
+            IEnumerable<FechaInscripcionGroup> data = db.Database.SqlQuery<FechaInscripcionGroup>(query);
+
             return View(data.ToList());
         }
 

@@ -8,6 +8,6 @@ namespace universidadContoso.ViewModels
         [DataType(DataType.Date)]
         public DateTime? FechaInscripcion { get; set; }
 
-        public int EstudiantesContador { get; set; }
+        public int CantidadEstudiantes { get; set; }
     }
 }

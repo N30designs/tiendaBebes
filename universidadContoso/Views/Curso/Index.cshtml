@@ -9,6 +9,14 @@
 <p>
     @Html.ActionLink("Crear Nuevo", "Create")
 </p>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Seleccionar departamento: @Html.DropDownList("SelectedDepartment", "All")
+        <input type="submit" value="Filter" />
+    </p>
+}
 <table class="table">
     <tr>
         <th>
@@ -26,26 +34,27 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CursoID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Creditos)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Departamento.Nombre)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.CursoID }) |
-            @Html.ActionLink("Detalles", "Details", new { id=item.CursoID }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.CursoID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CursoID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Creditos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Departamento.Nombre)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.CursoID }) |
+                @Html.ActionLink("Detalles", "Details", new { id = item.CursoID }) |
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.CursoID })
+            </td>
+        </tr>
+    }
 
 </table>

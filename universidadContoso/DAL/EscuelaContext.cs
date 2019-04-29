@@ -15,6 +15,9 @@ namespace universidadContoso.DAL
         public DbSet<Estudiante> Estudiantes{ get; set; }
         public DbSet<DespachoAsignado> DespachosAsignados{ get; set; }
 
+        public DbSet<Persona> Personas{ get; set; }
+
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
@@ -24,6 +27,7 @@ namespace universidadContoso.DAL
                 .Map(t => t.MapLeftKey("CursoID")
                     .MapRightKey("ProfesorID")
                     .ToTable("CursoProfesor"));
+            modelBuilder.Entity<Departamento>().MapToStoredProcedures();
         }
     }
 }

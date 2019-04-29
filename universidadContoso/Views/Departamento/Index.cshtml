@@ -1,0 +1,51 @@
+﻿@model IEnumerable<universidadContoso.Models.Departamento>
+
+@{
+    ViewBag.Title = "Listado de Departamentos";
+}
+
+<h2 class="text-uppercase">Listado de departamentos</h2>
+
+<p>
+    @Html.ActionLink("Crear nuevo departamento", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Presupuesto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaInicio)
+        </th>
+        <th>
+            Administrador
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Nombre)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Presupuesto)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.FechaInicio)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Administrador.NombreCompleto)
+    </td>
+    <td>
+        @Html.ActionLink("Editar", "Edit", new { id = item.DepartamentoID }) |
+        @Html.ActionLink("Detalles", "Details", new { id = item.DepartamentoID }) |
+        @Html.ActionLink("Eliminar", "Delete", new { id = item.DepartamentoID })
+    </td>
+</tr>
+}
+
+</table>

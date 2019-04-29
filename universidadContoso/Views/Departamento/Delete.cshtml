@@ -1,0 +1,58 @@
+﻿@model universidadContoso.Models.Departamento
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2 style="color:red" class="text-uppercase">Eliminar Departamento @Model.Nombre</h2>
+<p class="error">@ViewBag.ConcurrencyErrorMessage</p>
+
+<h3>¿Esta completamente seguro de querer eliminar el departamento de @Model.Nombre?<br />
+   ¡ESTA ACCIÓN SERÁ IRREVERSIBLE!.</h3>
+<div>
+    <h4>Departamento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Presupuesto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Presupuesto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaInicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaInicio)
+        </dd>
+        <dt>
+            Administrador
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Administrador.NombreCompleto)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.DepartamentoID)
+        @Html.HiddenFor(model => model.RowVersion)
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Volver al listado", "Index")
+        </div>
+    }
+</div>
