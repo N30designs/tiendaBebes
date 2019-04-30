@@ -18,7 +18,7 @@ namespace TiendaBebes.Controllers
         // GET: Categorias
         public ActionResult Index()
         {
-            return View(db.Categorias.ToList());
+            return View(db.Categorias.OrderBy(c => c.Nombre).ToList());
         }
 
         // GET: Categorias/Details/5

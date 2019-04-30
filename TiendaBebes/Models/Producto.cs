@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace TiendaBebes.Models
 {
     [Table("Productos")]
-    public class Producto
+    public partial class Producto
     {
         public int ID { get; set; }
 

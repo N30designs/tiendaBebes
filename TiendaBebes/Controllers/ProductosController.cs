@@ -16,9 +16,15 @@ namespace TiendaBebes.Controllers
         private TiendaContext db = new TiendaContext();
 
         // GET: Productos
-        public ActionResult Index()
+        public ActionResult Index(string categoria)
         {
             var productos = db.Productos.Include(p => p.Categoria);
+
+            if (!String.IsNullOrEmpty(categoria))
+            {
+                productos = productos.Where(p => p.Categoria.Nombre == categoria);
+            }
+            
             return View(productos.ToList());
         }
 
